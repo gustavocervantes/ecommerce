@@ -3,9 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+
 function NavBar() {
   return (
+    
     <Navbar bg="light" expand="lg">
+      
       <Container>
         <Navbar.Brand href="#home">Ecommerce</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -24,9 +27,12 @@ function NavBar() {
                 Ofertas
               </NavDropdown.Item>
             </NavDropdown>
+            
           </Nav>
         </Navbar.Collapse>
+        
       </Container>
+      
     </Navbar>
   );
 }
