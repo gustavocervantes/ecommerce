@@ -2,6 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from "../Img/CartWidget.svg"
+// en este caso me fui así una carpeta para atrás ../ 
+// el profe estaba en otra carpeta ../../Img...
 
 
 function NavBar() {
@@ -30,7 +33,7 @@ function NavBar() {
             
           </Nav>
         </Navbar.Collapse>
-        
+        <img src={CartWidget} className="imgNav" />
       </Container>
       
     </Navbar>

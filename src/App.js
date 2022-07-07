@@ -11,6 +11,7 @@ import CartWidget from "./components/Img/CartWidget.svg";
 
 function App() {
   // paso datos desde App el componente padre a los hijos
+  let saludos = "Bienvenido a mi ecommerce"
   const titulo = "soy titulo de la app"
   let subTitulo= "soy subtítulo de la app" // estado de app
   const styleApp = {backgroundColor:"blue", fontSize:22}
@@ -52,7 +53,9 @@ function App() {
       {/* todo lo anterior se fue al componente contenedor para modularizar */}
       {/* el componente lo inyecto como una prop, pasó a ser una prop de menu */}
       <Menu>
-        <ComponenteContenedor saludo="Bienvenido a mi ecommerce"/>
+        <ComponenteContenedor greeting={saludos}>
+          <Formulario/> 
+        </ComponenteContenedor>
       </Menu>
       {/* en App.js solo vamos a dejar en enrutado */}
       {/* si metiera el ComponenteContenedor dentro del NavBar, el componente dejaría de ser hijo de App()
@@ -74,3 +77,10 @@ export default App;
 // componentes contenedores:tienen como propósito encapsular a otros componentes, como el div de arriba
 // y proporcionarles las propiedades que necesitan. Además se encargan de modificar el estado de la aplicación 
 // para que el usuario vea cambios en los datos
+// children es una prop de react que se crea cuando envolvemos un componente con otro
+// un componente pasado por prop
+// componente: una función
+// props: la manera de pasar datos de un padre a su hijo
+// estado: datos que tiene mi componente
+// lifecycle: ciclo de vida del componente, nacen, se actualizan
+// DOM sync
