@@ -1,3 +1,6 @@
+// primero las librería que importo
+//import { useEffect } from 'react';
+// en segundo lugar los componentes que voy creando
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/navBar/Navbar';
@@ -8,6 +11,10 @@ import Formulario from './components/Formulario/Formulario';
 import ComponenteContenedor from './components/container/ComponenteContenedor';
 import Menu from './components/Menu/Menu';
 import CartWidget from "./components/Img/CartWidget.svg";
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+// en tercer lugar los estilos
+import "./App.css" 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   // paso datos desde App el componente padre a los hijos
@@ -52,11 +59,16 @@ function App() {
       <Formulario saludar={saludo}/> */}
       {/* todo lo anterior se fue al componente contenedor para modularizar */}
       {/* el componente lo inyecto como una prop, pasó a ser una prop de menu */}
-      <Menu>
-        <ComponenteContenedor greeting={saludos}>
+      
+      {/* <Menu>
+      </Menu> */}
+
+        <ComponenteContenedor greeting={saludos}> 
+        {/* children={Formulario} */}
           <Formulario/> 
         </ComponenteContenedor>
-      </Menu>
+        <ItemListContainer/>
+
       {/* en App.js solo vamos a dejar en enrutado */}
       {/* si metiera el ComponenteContenedor dentro del NavBar, el componente dejaría de ser hijo de App()
       pasando a ser hijo de NavBar. React lo inyecta en una prop que se llama por defecto children */}
