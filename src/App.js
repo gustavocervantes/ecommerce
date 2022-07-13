@@ -12,9 +12,13 @@ import ComponenteContenedor from './components/container/ComponenteContenedor';
 import Menu from './components/Menu/Menu';
 import CartWidget from "./components/Img/CartWidget.svg";
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Header from './components/Header/Header';
 // en tercer lugar los estilos
 import "./App.css" 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FuncionFecha from './components/FuncionFecha/FuncionFecha';
+import CardContador from './components/ContadorEcommerce/ContadorEcommerce';
+import ListCardUser from "../src/components/ListCardUser/ListCardUser.js"
 
 function App() {
   // paso datos desde App el componente padre a los hijos
@@ -29,9 +33,17 @@ function App() {
 
   return (
     
-    <div className="App">
+    <div>
       {/* <header className="App-header"> */}
+        <div className="App1">
+        <Header/>
+        </div>
         <NavBar/>
+        <div className="Card-Container">
+          <ListCardUser className="listFlex"/>
+        </div>
+        <br/>
+        
         <img src={CartWidget} className="App-logo" alt="logo" />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <p>
@@ -63,17 +75,27 @@ function App() {
       {/* <Menu>
       </Menu> */}
 
-        <ComponenteContenedor greeting={saludos}> 
+        <ComponenteContenedor greeting={saludos}/> 
         {/* children={Formulario} */}
-          <Formulario/> 
-        </ComponenteContenedor>
-        <ItemListContainer/>
-
+        <ItemListContainer 
+        greetingg="Bienvenidos a la ecommerce"
+        obj={{nombre:"fede"}}
+        // acá le estoy pasando un objeto como prop
+        
+        >
+          {/* inyecta por children a formulario como objeto
+          si fuesen más de un componente deja de ser objeto y se convierte en array */}
+        <Formulario/> 
+        <Formulario/> 
+        </ItemListContainer>
+        <FuncionFecha/>
+        <br/>
+        <CardContador className="cardContador"/>
       {/* en App.js solo vamos a dejar en enrutado */}
       {/* si metiera el ComponenteContenedor dentro del NavBar, el componente dejaría de ser hijo de App()
       pasando a ser hijo de NavBar. React lo inyecta en una prop que se llama por defecto children */}
 
-    </div>
+  </div>
   );
 }
 
@@ -96,3 +118,4 @@ export default App;
 // estado: datos que tiene mi componente
 // lifecycle: ciclo de vida del componente, nacen, se actualizan
 // DOM sync
+// las funciones viven unicamente durante el tiempo que son ejecutadas

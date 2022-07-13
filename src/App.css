@@ -1,5 +1,17 @@
-.App {
-  text-align: center;
+.App1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Card-Container{
+  display: flex;
+  /* width: 100%; */
+  justify-content: center;
+  align-items: center;
+  background: wheat;
+  background: linear-gradient(90deg, rgba(2,0,36,1)0%),rgba(9, 121, 96, 1)35%, rgba(1, 57, 69, 1)100%;
 }
 
 .App-logo {
@@ -42,4 +54,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.listFlex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardContador{
+  margin-bottom: 2em;
+  margin-left: 3em;
 }
